@@ -5,7 +5,6 @@
   
   <script src="jquery/jquery-1.10.2.js"></script>
   <script src="bootstrap-3.0.3/js/bootstrap.js"></script>
-  <script src="sockjs/sockjs-0.3.js"></script>
   
   <style>
     .contentDiv {
@@ -82,7 +81,7 @@
     console.log("opening socket");
     //on http server use document.domain instead od "localhost"
     //Start the websocket client
-    socket = new SockJS("http://" +document.domain + ":8080/springsockets/chat");
+    socket = new WebSocket("ws://" +document.domain + ":8080/eesockets/chat");
     
     //When the connection is opened, login.
     socket.onopen = function() { 
